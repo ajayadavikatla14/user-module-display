@@ -1,0 +1,118 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fb;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #0072c6;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+select {
+  padding: 8px;
+  font-size: 16px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.module-tabs {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.module-button {
+  background-color: #0072c6;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.module-button.inactive {
+  background-color: #e6f2ff;
+  color: #0072c6;
+}
+
+.module-button:hover {
+  background-color: #005bb5;
+  color: #ffffff;
+}
+
+.scope-area-container {
+  margin-top: 20px;
+}
+
+.scope-area-button, .pri-button {
+  background-color: #e6f2ff;
+  color: #0072c6;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid #0072c6;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.scope-area-button.selected, .pri-button.selected {
+  background-color: #0072c6;
+  color: #ffffff;
+}
+
+.scope-area-button:hover, .pri-button:hover {
+  background-color: #005bb5;
+  color: #ffffff;
+}
+
+.transaction-table-container {
+  margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transaction-table th, .transaction-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.transaction-table th {
+  background-color: #0072c6;
+  color: white;
+}
+
+.transaction-table td {
+  color: #333;
+}
+
+.transaction-table tr:hover {
+  background-color: #f1f1f1;
+}

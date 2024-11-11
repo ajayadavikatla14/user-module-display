@@ -1,0 +1,125 @@
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.module-selector, .scope-area-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.module-button, .scope-area-button {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.module-button.active, .scope-area-button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pri-buttons {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.transaction-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transaction-table th, .transaction-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.transaction-table th {
+  background-color: #f2f2f2;
+}
+
+.scope-area-list,
+.pri-list {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.scope-area-item,
+.pri-item {
+  padding: 8px 12px;
+  border: 1px solid #007bff;
+  background-color: #ffffff;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.scope-area-item.selected,
+.pri-item.selected {
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.app {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+.pri-container,
+.scope-area-container {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.pri-item-main,
+.scope-area-item {
+  padding: 8px 12px;
+  border: 1px solid #007bff;
+  background-color: #ffffff;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pri-item-main.selected,
+.scope-area-item.selected {
+  background-color: #007bff;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.transaction-list {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.transaction-header,
+.transaction-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.transaction-header {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.transaction-row {
+  color: #555;
+}
