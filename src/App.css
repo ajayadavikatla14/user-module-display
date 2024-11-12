@@ -123,3 +123,38 @@ h1 {
 .transaction-row {
   color: #555;
 }
+
+.UserSelector {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.UserSelector label {
+  font-weight: bold;
+  color: #333;
+}
+
+.UserSelector select {
+  padding: 8px 12px;
+  border: 1px solid #007bff;
+  background-color: #ffffff;
+  color: #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.UserSelector select:focus {
+  outline: none;
+  background-color: #f0f8ff;
+}
+
+.UserSelector select option {
+  color: #333;
+}
+
+.UserSelector select:hover {
+  background-color: #f2f8ff;
+}

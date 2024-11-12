@@ -8,71 +8,64 @@ const userAccessData = {
   Person_1: {
     modules: ["Module_1", "Module_2", "Module_3"],
     scopeAreas: {
-      "Module_1": ["SA_1"],
-      "Module_2": ["SA_2"],
-      "Module_3": ["SA_3"]
+      "Module_1": ["SA_1", "SA_2"],
+      "Module_2": ["SA_2", "SA_3"],
+      "Module_3": ["SA_1", "SA_3"]
     },
     priMapping: {
-      "SA_1": ["PRI_1", "PRI_3"],
-      "SA_2": ["PRI_10"],
-      "SA_3": ["PRI_14"]
+      "SA_1": ["PRI_1", "PRI_2", "PRI_3"],
+      "SA_2": ["PRI_10", "PRI_11"],
+      "SA_3": ["PRI_13", "PRI_14", "PRI_15"]
     },
     transactions: {
       "SA_1": {
         "PRI_1": 4,
-        "PRI_3": 5
+        "PRI_2": 5,
+        "PRI_3": 3,
       },
       "SA_2": {
-        "PRI_10": 2
+        "PRI_10": 6,
+        "PRI_11": 2,
       },
       "SA_3": {
-        "PRI_14": 0
+        "PRI_13": 8,
+        "PRI_14": 1,
+        "PRI_15": 7,
       }
     }
   },
   Person_2: {
-    modules: ["Module_2"],
+    modules: ["Module_1", "Module_2"],
     scopeAreas: {
-      "Module_2": ["SA_2", "SA_3"]
+      "Module_1": ["SA_1"],
+      "Module_2": ["SA_2"]
     },
     priMapping: {
-      "SA_2": ["PRI_12"],
-      "SA_3": ["PRI_13", "PRI_14", "PRI_15"]
+      "SA_1": ["PRI_1", "PRI_2"],
+      "SA_2": ["PRI_10"]
     },
     transactions: {
-      "SA_2": {
-        "PRI_12": 4
+      "SA_1": {
+        "PRI_1": 2,
+        "PRI_2": 5,
       },
-      "SA_3": {
-        "PRI_13": 9,
-        "PRI_14": 0,
-        "PRI_15": 10
+      "SA_2": {
+        "PRI_10": 3
       }
     }
   },
   Person_3: {
-    modules: ["Module_1", "Module_2", "Module_3"],
+    modules: ["Module_3"],
     scopeAreas: {
-      "Module_1": ["SA_1"],
-      "Module_2": ["SA_2"],
       "Module_3": ["SA_3"]
     },
     priMapping: {
-      "SA_1": ["PRI_1", "PRI_3"],
-      "SA_2": ["PRI_12", "PRI_10"],
-      "SA_3": ["PRI_13"]
+      "SA_3": ["PRI_13", "PRI_14"]
     },
     transactions: {
-      "SA_1": {
-        "PRI_1": 0,
-        "PRI_3": 0
-      },
-      "SA_2": {
-        "PRI_12": 12,
-        "PRI_10": 7
-      },
       "SA_3": {
-        "PRI_13": 0
+        "PRI_13": 4,
+        "PRI_14": 6
       }
     }
   }
@@ -115,34 +108,16 @@ function App() {
     setSelectedPRI(pri);
   };
 
-  const handleUserSelect = (event) => {
-    setUser(event.target.value);
-    setSelectedModule(null);
-    setSelectedScopeArea(null);
-    setSelectedPRI(null);
-  };
-
   return (
     <div className="App">
       <header className="App-header">
-        <h2>User Access Data</h2>
+        <h2>Dynamic Access Page</h2>
       </header>
-      
-      <div className="UserSelector">
-        <label htmlFor="userSelect">Select LoggedIn User: </label>
-        <select id="userSelect" value={user} onChange={handleUserSelect}>
-          <option value="Person_1">Person_1</option>
-          <option value="Person_2">Person_2</option>
-          <option value="Person_3">Person_3</option>
-        </select>
-      </div>
-
       <ModuleSelector
         modules={userAccessData[user].modules}
         selectedModule={selectedModule}
         onSelectModule={handleModuleSelect}
       />
-
       {selectedModule && (
         <ScopeAreaSelector
           scopeAreas={userAccessData[user].scopeAreas[selectedModule]}
@@ -153,7 +128,6 @@ function App() {
           selectedPRI={selectedPRI}
         />
       )}
-
       {selectedScopeArea && selectedPRI && (
         <TransactionTable
           transactions={userAccessData[user].transactions[selectedScopeArea][selectedPRI]}
